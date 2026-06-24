@@ -193,51 +193,63 @@
 </footer>
 
 <script>
-const words=[
-"Computer Science Student",
-"Web Developer",
-"Python Programmer",
-"IoT Enthusiast",
-"Problem Solver"
+const words = [
+    "Computer Science Student",
+    "Web Developer",
+    "Python Programmer",
+    "IoT Enthusiast",
+    "Problem Solver"
 ];
 
-let i=0;
-let j=0;
-let currentWord="";
-let isDeleting=false;
+let i = 0;
+let j = 0;
+let currentWord = "";
+let isDeleting = false;
 
-function type(){
-currentWord=words[i];
+function type() {
 
-if(!isDeleting){
-document.getElementById("typing").textContent=
-currentWord.substring(0,j++);
+    currentWord = words[i];
 
-if(j>currentWord.length){
-isDeleting=true;
-setTimeout(type,1000);
-return;
-}
-}else{
-document.getElementById("typing").textContent=
-currentWord.substring(0,j--);
+    if (!isDeleting) {
 
-if(j<0){
-isDeleting=false;
-i=(i+1)%words.length;
-}
-}
+        document.getElementById("typing").textContent =
+        currentWord.substring(0, j++);
 
-setTimeout(type,isDeleting?60:120);
+        if (j > currentWord.length) {
+            isDeleting = true;
+            setTimeout(type, 1000);
+            return;
+        }
+
+    } else {
+
+        document.getElementById("typing").textContent =
+        currentWord.substring(0, j--);
+
+        if (j < 0) {
+            isDeleting = false;
+            i = (i + 1) % words.length;
+        }
+    }
+
+    setTimeout(type, isDeleting ? 60 : 120);
 }
 
 type();
 
-document.getElementById("darkBtn")
-.addEventListener("click",()=>{
-document.body.classList.toggle("dark");
+const darkBtn = document.getElementById("darkBtn");
+
+darkBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        darkBtn.textContent = "☀️";
+    } else {
+        darkBtn.textContent = "🌚";
+    }
+
 });
-    
 </script>
 
 </body>
