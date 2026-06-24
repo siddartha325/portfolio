@@ -12,11 +12,47 @@ body{
     transition:0.5s;
 }
 
+/* Dark Mode */
 .dark{
     background:#121212;
     color:white;
 }
 
+.dark nav{
+    background:#000;
+}
+
+.dark .card,
+.dark .project-card{
+    background:#1f1f1f;
+    color:white;
+}
+
+.dark .about,
+.dark .contact,
+.dark .certifications,
+.dark .timeline,
+.dark .skills{
+    color:white;
+}
+
+.dark .bar{
+    background:#444;
+}
+
+.dark footer{
+    background:#000;
+}
+
+.dark .section-title{
+    color:#38bdf8;
+}
+
+.dark a{
+    color:#38bdf8;
+}
+
+/* Navbar */
 nav{
     position:fixed;
     width:100%;
@@ -48,6 +84,7 @@ nav ul li a{
     color:white;
     text-decoration:none;
     font-weight:500;
+    transition:0.3s;
 }
 
 nav ul li a:hover{
@@ -61,8 +98,15 @@ nav ul li a:hover{
     padding:8px 15px;
     border-radius:20px;
     cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
 }
 
+#darkBtn:hover{
+    transform:scale(1.1);
+}
+
+/* Hero Section */
 .hero{
     height:100vh;
     background:linear-gradient(135deg,#2563eb,#7c3aed);
@@ -79,6 +123,7 @@ nav ul li a:hover{
     height:180px;
     border-radius:50%;
     border:5px solid white;
+    object-fit:cover;
     margin-bottom:20px;
 }
 
@@ -109,8 +154,14 @@ nav ul li a:hover{
     text-decoration:none;
     border-radius:30px;
     font-weight:bold;
+    transition:0.3s;
 }
 
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Sections */
 section{
     padding:100px 10%;
 }
@@ -127,11 +178,13 @@ section{
     line-height:1.8;
 }
 
+/* Education */
 .timeline{
     display:grid;
     gap:20px;
 }
 
+/* Cards */
 .card,
 .project-card{
     background:white;
@@ -141,19 +194,20 @@ section{
     transition:0.3s;
 }
 
-.dark .card,
-.dark .project-card{
-    background:#1f1f1f;
-}
-
 .card:hover,
 .project-card:hover{
     transform:translateY(-5px);
 }
 
+/* Skills */
 .skills{
     display:grid;
     gap:25px;
+}
+
+.skill p{
+    margin-bottom:8px;
+    font-weight:bold;
 }
 
 .bar{
@@ -170,12 +224,14 @@ section{
     border-radius:20px;
 }
 
+/* Projects */
 .projects{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
+/* Certifications */
 .certifications ul{
     max-width:800px;
     margin:auto;
@@ -186,6 +242,7 @@ section{
     font-size:18px;
 }
 
+/* Contact */
 .contact{
     text-align:center;
 }
@@ -200,6 +257,7 @@ section{
     text-decoration:none;
 }
 
+/* Footer */
 footer{
     background:#0f172a;
     color:white;
@@ -207,7 +265,9 @@ footer{
     padding:20px;
 }
 
+/* Mobile Responsive */
 @media(max-width:768px){
+
     nav{
         flex-direction:column;
     }
@@ -220,5 +280,9 @@ footer{
 
     .hero h1{
         font-size:38px;
+    }
+
+    .section-title{
+        font-size:28px;
     }
 }
