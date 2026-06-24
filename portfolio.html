@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravuri Siddartha | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:whit;
+    color:#333;
+    transition:0.5s;
+}
+
+.dark{
+    background:#121212;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#0f172a;
+}
+
+.logo{
+    color:white;
+    font-size:26px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+#darkBtn{
+    background:#38bdf8;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.hero{
+    height:100vh;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid white;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero span{
+    color:#ffd700;
+}
+
+.hero h2{
+    margin-top:15px;
+    height:40px;
+}
+
+.hero p{
+    margin:20px auto;
+    max-width:700px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:white;
+    color:#2563eb;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:50px;
+    color:#2563eb;
+}
+
+.about{
+    text-align:center;
+    line-height:1.8;
+}
+
+.timeline{
+    display:grid;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.dark .card{
+    background:#1f1f1f;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.skills{
+    display:grid;
+    gap:25px;
+}
+
+.skill p{
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.bar{
+    width:100%;
+    height:12px;
+    background:#ddd;
+    border-radius:20px;
+}
+
+.bar span{
+    display:block;
+    height:100%;
+    background:#2563eb;
+    border-radius:20px;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.dark .project-card{
+    background:#1f1f1f;
+}
+
+.project-card:hover{
+    transform:scale(1.03);
+}
+
+.certifications ul{
+    max-width:800px;
+    margin:auto;
+}
+
+.certifications li{
+    margin:15px 0;
+    font-size:18px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:15px 0;
+    font-size:18px;
+}
+
+.contact a{
+    text-decoration:none;
+    color:#2563eb;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-top:15px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Siddartha</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button id="darkBtn">🌚</button>
+</nav>
+
+<section class="hero" id="home">
+
+   <div class="hero-content">
+
+    <img src="siddu pic.jpeg" alt="Profile">
+
+    <h1>Hi, I'm <span>Ravuri Siddartha</span></h1>
+
+    <h2><span id="typing"></span></h2>
+
+        <p>
+            Motivated Computer Science Engineering Student with strong
+            programming and problem-solving skills. Passionate about
+            building real-world applications and learning emerging technologies.
+        </p>
+
+        <a href="#" class="btn">Download Resume</a>
+
+    </div>
+
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+        <p>
+            I am a B.Tech Computer Science Engineering student at
+            Velagapudi Ramakrishna Siddhartha Engineering College,
+            Vijayawada with a CGPA of 8.45.
+        </p>
+
+        <br>
+
+        <p>
+            My interests include Competitive Programming, Full Stack Development,
+            Artificial Intelligence, Machine Learning, Hackathons,
+            and IoT-based solutions.
+        </p>
+    </div>
+</section>
+
+<section id="education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="timeline">
+
+        <div class="card">
+            <h3>B.Tech - Computer Science Engineering</h3>
+            <p>Velagapudi Ramakrishna Siddhartha Engineering College</p>
+            <p>CGPA: 8.45</p>
+        </div>
+
+        <div class="card">
+            <h3>Intermediate</h3>
+            <p>VIBM Junior College</p>
+            <p>Percentage: 97%</p>
+        </div>
+
+        <div class="card">
+            <h3>Secondary Education</h3>
+            <p>Vivekananda EM High School</p>
+            <p>Percentage: 100%</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <p>Python</p>
+            <div class="bar"><span style="width:90%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>Java</p>
+            <div class="bar"><span style="width:85%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>C Programming</p>
+            <div class="bar"><span style="width:88%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>Data Structures & Algorithms</p>
+            <div class="bar"><span style="width:90%"></span></div>
+        </div>
+
+        <div class="skill">
+            <p>Web Development</p>
+            <div class="bar"><span style="width:80%"></span></div>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+        <div class="project-card">
+            <h3>Smart Donation Box Using IoT</h3>
+            <p>
+                Built an IoT-based donation system using Arduino/NodeMCU
+                and sensors. Enabled real-time monitoring of donation levels
+                and improved transparency and security.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Student Project Submission Portal</h3>
+            <p>
+                Developed a web-based portal for students to upload,
+                manage and showcase academic projects efficiently.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>
+                Responsive personal portfolio built using HTML, CSS,
+                and JavaScript showcasing projects, skills and achievements.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="certifications" class="certifications">
+    <h2 class="section-title">Certifications</h2>
+
+    <ul>
+        <li>Google Android Developer – National Internship Portal</li>
+        <li>Programming Essentials in C & Python – Cisco Networking Academy</li>
+        <li>Basics of Python – Infosys Springboard</li>
+        <li>Foundations of R Software – NPTEL</li>
+        <li>Social Networks – NPTEL</li>
+        <li>Privacy and Security in Online Social Media – NPTEL</li>
+    </ul>
+</section>
+
+<section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+
+    <p>📧 siddartharavuri@gmail.com</p>
+    <p>📱 +91 6304244820</p>
+    <p>📍 Mylavaram, Andhra Pradesh, India</p>
+
+    <p>
+        🔗
+        <a href="https://www.geeksforgeeks.org/user/siddarth1g8y/" target="_blank">
+            GeeksforGeeks Profile
+        </a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Ravuri Siddartha | Portfolio</p>
+</footer>
+
+<script>
+const words=[
+"Computer Science Student",
+"Web Developer",
+"Python Programmer",
+"IoT Enthusiast",
+"Problem Solver"
+];
+
+let i=0;
+let j=0;
+let currentWord="";
+let isDeleting=false;
+
+function type(){
+
+currentWord=words[i];
+
+if(!isDeleting){
+
+document.getElementById("typing").textContent=
+currentWord.substring(0,j++);
+
+if(j>currentWord.length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+
+}else{
+
+document.getElementById("typing").textContent=
+currentWord.substring(0,j--);
+
+if(j<0){
+isDeleting=false;
+i=(i+1)%words.length;
+}
+}
+
+setTimeout(type,isDeleting?60:120);
+}
+
+type();
+
+document.getElementById("darkBtn")
+.addEventListener("click",()=>{
+
+document.body.classList.toggle("dark");
+
+});
+</script>
+
+</body>
+</html>
